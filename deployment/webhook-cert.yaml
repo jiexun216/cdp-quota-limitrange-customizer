@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: quota-limitrange-webhook-cert
+  namespace: cdp-customizer
+spec:
+  secretName: quota-limitrange-customizer-admission-manager-certs
+  subject:
+    organizations:
+    - dce
+  usages:
+    - digital signature
+    - key encipherment
+    - server auth
+    - client auth
+  dnsNames:
+  - quota-limitrange-admission-manager
+  - quota-limitrange-admission-manager.cdp-customizer
+  - quota-limitrange-admission-manager.cdp-customizer.svc
+  - quota-limitrange-admission-manager.cdp-customizer.svc.cluster.local
+  ipAddresses:
+  - 127.0.0.1
+  issuerRef:
+    name: k8s-ca-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
