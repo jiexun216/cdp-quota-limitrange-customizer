@@ -20,7 +20,7 @@ spec:
           env:
             - name: ADD_SECURITRYCONEXT_PER_POD
               value: "false"
-          image: daocloud.io/daocloud/cdp-quota-limitrange-customizer:latest
+          image: daocloud.io/daocloud/cdp-limitrange-customizer:latest
           imagePullPolicy: Always
           args:
             - -tlsCertFile=/etc/webhook/certs/tls.crt

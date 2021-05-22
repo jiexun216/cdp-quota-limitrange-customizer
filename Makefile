@@ -2,8 +2,8 @@
 
 .DEFAULT_GOAL := docker-build
 
-# Image URL to use all building/pushing image targets
-IMAGE ?= daocloud.io/daocloud/cdp-quota-limitrange-customizer:latest
+# Image URL to use all building/pushing image targets cdp-quota-limitrange-customizer
+IMAGE ?= daocloud.io/daocloud/cdp-limitrange-customizer:latest
 # deploy in which namespace
 NAMESPACE ?= cdp-customizer
 
