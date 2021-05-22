@@ -76,19 +76,19 @@ webhooks:
           operator: Exists
     timeoutSeconds: 5
   - name: validate-quota-limitrange-ds-parent-namespace.datacreating.com
-      clientConfig:
-        service:
-          name: quota-limitrange-admission-manager
-          namespace: cdp-customizer
-          path: "/mutate"
-      rules:
-        - operations: ["CREATE"]
-          apiGroups: ["apps"]
-          apiVersions: ["v1"]
-          resources: ["limitranges","resourcequotas"]
-      namespaceSelector:
-        matchExpressions:
-          # key exist
-          - key: ds-parent-namespace
-            operator: Exists
-      timeoutSeconds: 5
+    clientConfig:
+      service:
+        name: quota-limitrange-admission-manager
+        namespace: cdp-customizer
+        path: "/mutate"
+    rules:
+      - operations: ["CREATE"]
+        apiGroups: ["apps"]
+        apiVersions: ["v1"]
+        resources: ["limitranges","resourcequotas"]
+    namespaceSelector:
+      matchExpressions:
+        # key exist
+        - key: ds-parent-namespace
+          operator: Exists
+    timeoutSeconds: 5
